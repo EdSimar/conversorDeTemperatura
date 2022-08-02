@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Conversor de Temperaturas</h1>
+        </header>
+        <section id="borders">
+            <label for="celsius">Celsius</label>
+            <input type="number" name="celsius" min="-273" max="100" step="0.01" value="0.00" id="celsius" disabled> °C
+            <div>
+                <span>-273,00</span>
+                    <input type="range" name="rgCelsius" min="-273" max="100" step="0.01" class="lineRange" value="0.00" id="rgCelsius" 
+                    onChange="updateCelsius(); updateFahreinheit(); updateKelvin()" />
+                <span>100,00</span>
+            </div>
+        </section>
+
+        <section id="borders">
+            <label for="fahrenheit">Fahrenheit</label>
+            <input type="number" name="fahrenheit" min="-459.40" max="212.00" step="0.01" id="fahrenheit" disabled> °F
+            <div>
+                <span>-459,40</span>
+                    <input type="range" name="rgFahreinheit" min="-459,40" max="212,00" step="0.01" value="32.00" class="lineRange" id="rgFahreinheit" />
+                <span>212,00</span>
+            </div>
+        </section>
+        
+        <section id="borders">
+            <label for="kelvin">Kelvin</label>
+            <input type="number" name="kelvin" min="0.00" max="373.15" step="0.01" id="kelvin" disabled> °K
+            <div>
+                <span>0,00</span>
+                    <input type="range" name="rgKelvin" min="0.00" max="373.15" step="0.01" value="273.00" class="lineRange" id="rgKelvin" />
+                <span>373,15</span>
+            </div>
+        </section>
+
+        <section id="position">
+            <button id="btnZerar" onclick="btnZerar()">Zerar</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
